@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        font-family: 'Raleway', sans-serif;
+        background-color: teal;
+      }
+      video {
+        width: 100dvw;
+        min-height: 100dvh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover; 
+      }
+      .header-text {
+        position: absolute;
+        color: white;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        transform: translateY(-5rem);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;  
+      }
+      .header-text h1 {
+        font-weight: 400;
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .header-text span {
+        display: block;
+        font-weight: 900;
+        font-size: 6rem;
+      }
+      .description {
+        position: absolute;
+        bottom: 0; 
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: white;
+        background-color: hsla(42, 45%, 50%, 0.7);
+        padding: 2rem; 
+      }
+      .description p {
+        max-width: 40rem;
+        margin-inline: auto;
+        line-height: 1.6;
+      }
+      .credit {
+        font-size: .75rem;
+      }
+      .credit a {
+        color: white; 
+        text-underline-offset: 2px;
+      }
+</style>
+<body>
+    <header class="video-header">
+
+        <video src="/static/images/a.mp4" autoplay loop playsinline muted></video>
+      
+        <div class="header-text">
+          <h1>
+            THE MACHINE LEARNING PROJECT   </h1>
+           <br> <span style="font-size: 70PX;">SEPSIS DETECTION USING ML</span>
+       
+        </div>
+        <div class="description">
+          <p> Sepsis is a life-threatening medical condition that occurs when the body's response to an infection triggers a systemic inflammatory response. This overwhelming immune response can lead to organ dysfunction and failure. Early recognition and prompt medical intervention are crucial for treating sepsis and preventing severe complications.</p>
+          <p class="credit">Want To know More Insides.<a href="Register_2" style="font-size: 20px;">Explore More</a></p>
+        </div>
+      </header>
+</body>
+</html>

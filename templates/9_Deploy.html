@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <!-- ! Bootstrap 5 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+      integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"
+      integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <!-- ! Custom Files -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+</head>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Tektur&display=swap");
+
+	body {
+	  font-family: "Tektur", cursive !important;
+	  padding: 3rem 1rem !important;
+	}
+	
+	input::placeholder {
+	  font-size: 15px !important;
+	  color: #c91818 !important;
+	}
+</style>
+<script>
+	const visibilityToggleBtn = document.querySelector(".visibility-toggle");
+const passwordField = document.querySelector("#pwd");
+const visibilityIcon = document.querySelector("#visibility-icon");
+
+visibilityToggleBtn.addEventListener("click", () => {
+  passwordField.type === "password"
+    ? passwordField.setAttribute("type", "text")
+    : passwordField.setAttribute("type", "password");
+  visibilityIcon.name === "eye-outline"
+    ? visibilityIcon.setAttribute("name", "eye-off-outline")
+    : visibilityIcon.setAttribute("name", "eye-outline");
+});
+</script>
+<body>
+	<a href="{% url 'Home_4' %}">Back to Home Page</a>
+<center>
+<h1>
+	ENTER VALUES FOR PREDICTION <br><br>
+</h1>
+</center>
+<center><p style="color: #c91818; font-size: 30px;">{{prediction_text}}</p></center>
+  <body class="min-vh-100">
+    <div class="container-sm">
+      <form
+        class="col-12 col-md-6 mx-auto shadow p-4"
+        action="{% url 'Deploy_9' %}"
+        method="POST"
+      >
+	  {% csrf_token %}
+        <div class="mb-4 mt-3 border-bottom">
+          <label for="O2Sat" class="form-label"> O2Sat: </label>
+          <input
+            type="text"
+            name="O2Sat"
+            id="name"
+            class="form-control form-control-lg border-0"
+            placeholder="Enter O2Sat"
+        
+            maxlength="16"
+            required
+          />
+        </div>
+		<div class="mb-4 mt-3 border-bottom">
+			<label for="Temp" class="form-label"> Temp: </label>
+			<input
+			  type="text"
+			  name="Temp"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Temp"
+			  
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="SBP" class="form-label"> SBP: </label>
+			<input
+			  type="text"
+			  name="SBP"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter SBP"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="MAP" class="form-label"> MAP: </label>
+			<input
+			  type="text"
+			  name="MAP"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter MAP"
+			 
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="DBP" class="form-label"> DBP: </label>
+			<input
+			  type="text"
+			  name="DBP"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter DBP"
+			 
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Resp" class="form-label"> Resp: </label>
+			<input
+			  type="text"
+			  name="Resp"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Resp"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="BaseExcess" class="form-label"> BaseExcess: </label>
+			<input
+			  type="text"
+			  name="BaseExcess"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter BaseExcess"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="HCO3" class="form-label"> HCO3: </label>
+			<input
+			  type="HCO3"
+			  name="uname"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter HCO3"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="FiO2" class="form-label"> FiO2: </label>
+			<input
+			  type="text"
+			  name="FiO2"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter FiO2"
+			
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="pH" class="form-label"> pH: </label>
+			<input
+			  type="text"
+			  name="pH"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter pH"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="PaCO2" class="form-label"> PaCO2: </label>
+			<input
+			  type="text"
+			  name="PaCO2"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter PaCO2"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="SaO2" class="form-label"> SaO2: </label>
+			<input
+			  type="text"
+			  name="SaO2"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter SaO2"
+		
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="BUN" class="form-label"> BUN: </label>
+			<input
+			  type="text"
+			  name="BUN"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter BUN"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Alkalinephos" class="form-label"> Alkalinephos: </label>
+			<input
+			  type="text"
+			  name="Alkalinephos"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Alkalinephos"
+		
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Calcium" class="form-label"> Calcium: </label>
+			<input
+			  type="text"
+			  name="Calcium"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Calcium"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Chloride" class="form-label"> Chloride: </label>
+			<input
+			  type="text"
+			  name="Chloride"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Chloride"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Creatinine" class="form-label"> Creatinine: </label>
+			<input
+			  type="text"
+			  name="Creatinine"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Creatinine"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Glucose" class="form-label"> Glucose: </label>
+			<input
+			  type="text"
+			  name="Glucose"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Glucose"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Lactate" class="form-label"> Lactate: </label>
+			<input
+			  type="text"
+			  name="Lactate"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Lactate"
+			 
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Magnesium" class="form-label"> Magnesium: </label>
+			<input
+			  type="text"
+			  name="Magnesium"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Magnesium"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Phosphate" class="form-label"> Phosphate: </label>
+			<input
+			  type="text"
+			  name="Phosphate"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Phosphate"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Potassium" class="form-label"> Potassium: </label>
+			<input
+			  type="text"
+			  name="Potassium"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Potassium"
+		
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Hct" class="form-label"> Hct: </label>
+			<input
+			  type="text"
+			  name="Hct"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Hct"
+	
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Hgb" class="form-label"> Hgb: </label>
+			<input
+			  type="text"
+			  name="Hgb"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Hgb"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="WBC" class="form-label"> WBC: </label>
+			<input
+			  type="text"
+			  name="WBC"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter WBC"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="Platelets" class="form-label"> Platelets: </label>
+			<input
+			  type="text"
+			  name="Platelets"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter Platelets"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="HospAdmTime" class="form-label"> HospAdmTime: </label>
+			<input
+			  type="text"
+			  name="HospAdmTime"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter HospAdmTime"
+
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  <div class="mb-4 mt-3 border-bottom">
+			<label for="ICULOS" class="form-label"> ICULOS: </label>
+			<input
+			  type="text"
+			  name="ICULOS"
+			  id="name"
+			  class="form-control form-control-lg border-0"
+			  placeholder="Enter ICULOS"
+			  
+			  maxlength="16"
+			  required
+			/>
+		  </div>
+		  
+		  <!-- </div> -->
+		  
+
+        </div>
+        <button
+          type="submit"
+          class="d-block w-50 mx-auto btn btn-outline-dark mt-5"
+        >
+          SUBMIT
+        </button>
+		
+      </form>
+	  
+	  			<!-- BUY ME A COFFEE AND HELP SUPPORT OPEN-SOURCE RESOURCES -->
+<!-- <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="programmingfans" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script> -->
+</body>
+</html>

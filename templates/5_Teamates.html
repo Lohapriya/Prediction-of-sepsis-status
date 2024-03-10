@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+body
+{
+  text-align:center;
+  font-family: cursive;
+  background-image: url("/static/images/A42.webp"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.our-team-head
+{
+	width:100%;
+	display:flex;
+	align-items:center;
+}
+.our-team-head h1
+{
+  font-family: 'Kaushan Script', cursive;
+	margin-top:15%;
+	text-align:left;
+	width:37%;
+	padding-left:2%;
+	font-size:60pt;
+	color: #cdb30b;
+	text-shadow: 
+					 0 0 5px rgba(0,0,0,.05),
+					0 1px 3px rgba(0,0,0,.10),
+					0 3px 5px rgba(0,0,0,.10),
+				   0 5px 10px rgba(0,0,0,.10),
+				  0 10px 10px rgba(0,0,0,.10);
+}
+
+
+.our-team-support-image
+{
+	top:5%;
+	left:23%;
+	height:400px;
+	width:15%;
+	position: absolute;
+	margin-top:100px;
+	margin-left:100px;
+	-ms-transform: skew(-30deg,0deg);
+	-webkit-transform: skew(-30deg,0deg);
+	transform: skew(-30deg,0deg);
+	overflow: hidden;
+	
+}
+
+.our-team-support-image-inner
+{ 
+	position: absolute;
+	left:-230px;
+	width:660px;
+	height: 500px;  
+	-ms-transform: skew(30deg,0deg);
+	-webkit-transform: skew(30deg,0deg);
+	transform: skew(30deg,0deg);
+	background-image: url("/static/images/A45.jpg");
+	background-size:cover;
+
+}
+
+.our-team-design-image
+{
+	top:5%;
+	left:43%;
+	height:400px;
+	width:15%;
+	position: absolute;
+	margin-top:100px;
+	margin-left:100px;
+	-ms-transform: skew(-30deg,0deg);
+	-webkit-transform: skew(-30deg,0deg);
+	transform: skew(-30deg,0deg);
+	overflow: hidden;
+}
+
+.our-team-design-image-inner
+{ 
+	position: absolute;
+	left:-240px;
+  top:-10px;
+	width:660px;
+	height: 500px;  
+	-ms-transform: skew(30deg,0deg);
+	-webkit-transform: skew(30deg,0deg);
+	transform: skew(30deg,0deg);
+	background-image: url("/static/images/A67.jpg");
+	background-size:cover;
+}
+
+
+.our-team-developer-image
+{
+	top:5%;
+	left:63%;
+	height:400px;
+	width:15%;
+	position: absolute;
+	margin-top:100px;
+	margin-left:100px;
+	-ms-transform: skew(-30deg,0deg);
+	-webkit-transform: skew(-30deg,0deg);
+	transform: skew(-30deg,0deg);
+	overflow: hidden;
+
+}
+.our-team-support-image-inner::after,
+.our-team-design-image-inner::after,
+.our-team-developer-image-inner::after
+{
+	content: '';
+	transition:all 0.5s linear;
+}
+.our-team-developer-image-inner
+{ 
+	position: absolute;
+	left:-220px;
+	width:660px;
+	height: 500px;  
+	-ms-transform: skew(30deg,0deg);
+	-webkit-transform: skew(30deg,0deg);
+	transform: skew(30deg,0deg);
+	background-image: url("/static/images/A20.jpg");
+	background-size:cover;
+}
+.our-team-support-image:hover .our-team-support-image-inner::after
+{
+  display: block;
+  position: relative;
+  background:#000;
+  width: 100%;
+  height:100%;
+  opacity:0.6;
+  content: '';
+}
+.our-team-support-image:hover .content-details
+{
+    color: #fff;
+    position: absolute;
+    transform: skewX(30deg);
+	top:25%;
+}
+
+.our-team-design-image:hover .our-team-design-image-inner::after
+{
+  display: block;
+  position: relative;
+  background:#000;
+  width: 100%;
+  height:100%;
+  opacity:0.6;
+  content: '';
+
+}
+.our-team-design-image:hover .content-details
+{
+    color: #fff;
+    position: absolute;
+    transform: skewX(30deg);
+	top:25%;
+}
+
+.our-team-developer-image:hover .our-team-developer-image-inner::after
+{
+  display: block;
+  position: relative;
+  background:#000;
+  width: 100%;
+  height:100%;
+  opacity:0.6;
+  content: '';
+
+}
+.our-team-developer-image:hover .content-details
+{
+    color: #fff;
+    position: absolute;
+    transform: skewX(30deg);
+	top:25%;
+}
+
+
+
+</style>
+<body>
+    <!------------------------------------
+ LIVE VERSION LINK:
+https://codepen.io/abhinanduN/full/LgeNom
+--------------------------------------->
+<a href="{% url 'Home_4' %}" style="color: WHITE;font-size: 25PX;">Back to Home Page</a>
+<div class="our-team-inner">
+    <div class="our-team-head">
+        
+        <h1>TEAM</h1>
+        <div class="our-team-support-image">
+            <div class="our-team-support-image-inner"></div>
+            <div class="content-details fadeIn-top">
+                <h3>PERSON</h3>
+                <p>MACHINE LEARNING PROJECT</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="our-team-design-image">
+            <div class="our-team-design-image-inner"></div>
+            <div class="content-details fadeIn-top">
+                <h3>PERSON</h3>
+                <p>MACHINE LEARNING PROJECT</p>
+        
+            </div>
+        </div>
+        <div class="our-team-developer-image">
+            <div class="our-team-developer-image-inner"></div>
+            <div class="content-details fadeIn-top">
+                <h3>PERSON</h3>
+                <p>MACHINE LEARNING PROJECT</p>
+        
+            </div>
+        </div>
+       
+    
+    </div>
+    
+    
+</div>
+</body>
+</html>
